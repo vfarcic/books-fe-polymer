@@ -6,27 +6,29 @@ sudo docker build \
     -t vfarcic/books-fe-polymer-dev \
     -f Dockerfile.dev \
     .
+    
+sudo docker push vfarcic/books-fe-polymer-dev
 ```
 
 Development
 ===========
 
 ```bash
-sudo docker run --rm -it \
-    -v $PWD/node_modules:/node_modules \
-    -v $PWD/bower_components:/bower_components \
-    -v $PWD/app:/app \
-    -p 3000:3000 \
-    -p 3001:3001 \
-    vfarcic/books-fe-polymer-dev
+sudo docker-compose -f docker-compose-dev.yml up
 ```
 
 TODO
 ====
 
-* Explain auto-reload
+* Create docker-compose.yml
+* Remove browser-sync or figure out how to make it work with nginx
+* Switch from gulp to nginx for serving files
 * Clean unused files
-* Remove unused elements from elements/elements.html
+** Remove unused elements from elements/elements.html
+** Remove unused styles
+** Remove other unused files
+* Check what happens when remote imports are vulcanized
+* Create Dockerfile
 
 #### Build & Vulcanize
 
