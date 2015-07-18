@@ -16,7 +16,6 @@ RUN npm install -g gulp bower
 ADD bower.json /bower.json
 ADD gulpfile.js /gulpfile.js
 ADD package.json /package.json
-ADD wct.conf.json /wct.conf.json
 
 # Scripts
 ADD dev.sh /dev.sh

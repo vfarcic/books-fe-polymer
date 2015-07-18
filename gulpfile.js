@@ -175,7 +175,10 @@ gulp.task('precache', function (callback) {
 });
 
 // Clean Output Directory
-gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
+//gulp.task('clean', del.bind(null, ['.tmp', 'dist', '!dist']));
+gulp.task('clean', function(cb) {
+  del(['.tmp', 'dist/**', '!dist'], cb)
+});
 
 // Watch Files For Changes & Reload
 gulp.task('serve', ['styles', 'elements', 'images'], function () {
@@ -234,7 +237,7 @@ gulp.task('default', ['clean'], function (cb) {
     ['copy', 'styles'],
     'elements',
     ['jshint', 'images', 'fonts', 'html'],
-    'vulcanize', 'precache',
+    'vulcanize',
     cb);
 });
 

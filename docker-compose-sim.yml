@@ -1,0 +1,16 @@
+nginx:
+  image: nginx
+  volumes:
+    - conf/nginx.conf:/etc/nginx/nginx.conf
+  ports:
+    - 8080:80
+booksFeSim:
+  extends:
+    file: docker-compose.yml
+    service: booksFe
+booksService:
+  image: vfarcic/books-service
+  volumes:
+    - /data/db:/data/db
+  ports:
+      - 8082:8080

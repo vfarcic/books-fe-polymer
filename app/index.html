@@ -51,10 +51,10 @@
                 <span>Home</span>
               </a>
 
-              <a data-route="books" href="/books">
-                <iron-icon icon="book"></iron-icon>
-                <span>Books</span>
-              </a>
+            <a data-route="books" href="/books">
+              <iron-icon icon="book"></iron-icon>
+              <span>Books</span>
+            </a>
 
           </paper-menu>
       </div>
@@ -71,7 +71,7 @@
         </paper-toolbar>
 
         <!-- Main Content -->
-        <div class="content">
+        <div>
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
             <section data-route="home">
@@ -94,33 +94,10 @@
               </paper-material>
             </section>
 
-            <section data-route="user-info">
-              <paper-material elevation="1">
-                <h2 class="paper-font-display2">
-                User:<span>{{params.name}}</span>
-                </h2>
-                <div>This is <span>{{params.name}}</span>'s section</div>
-              </paper-material>
-            </section>
-
           </iron-pages>
         </div>
       </paper-header-panel>
     </paper-drawer-panel>
-
-    <paper-toast id="caching-complete"
-                 duration="6000"
-                 text="Caching complete! This app will work offline.">
-    </paper-toast>
-
-    <platinum-sw-register auto-register
-                          clients-claim
-                          skip-waiting
-                          on-service-worker-installed="displayInstalledToast">
-      <platinum-sw-cache default-cache-strategy="networkFirst"
-                         precache-file="precache.json">
-      </platinum-sw-cache>
-    </platinum-sw-register>
 
   </template>
 
