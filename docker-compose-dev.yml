@@ -1,4 +1,4 @@
-app:
+appDev:
   image: vfarcic/books-fe-polymer-dev
   volumes:
     - node_modules:/node_modules
