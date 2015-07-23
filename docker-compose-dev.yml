@@ -1,8 +1,6 @@
 appDev:
   image: vfarcic/books-fe-polymer-dev
   volumes:
-    - node_modules:/node_modules
-    - bower_components:/bower_components
     - app:/app
   ports:
     - 8081:3000

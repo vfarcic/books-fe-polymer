@@ -17,6 +17,9 @@ ADD bower.json /bower.json
 ADD gulpfile.js /gulpfile.js
 ADD package.json /package.json
 
+# Dependencies
+RUN npm install && bower install --allow-root --config.interactive=false -s
+
 # Scripts
 ADD dev.sh /dev.sh
 RUN chmod +x /dev.sh
