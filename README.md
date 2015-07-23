@@ -16,8 +16,23 @@ sudo docker push vfarcic/books-fe-polymer
 Development
 ===========
 
+Without Vagrant
+---------------
+
 ```bash
-sudo docker-compose -f docker-compose-dev.yml up
+sudo docker-compose -f docker-compose-dev.yml up -d
+sudo docker-compose -f docker-compose-dev.yml logs
+```
+
+With Vagrant
+------------
+
+```bash
+vagrant up dev
+vagrant ssh dev
+cd /vagrant
+sudo docker-compose -f docker-compose-dev.yml up -d
+sudo docker-compose -f docker-compose-dev.yml logs
 ```
 
 Production Simulation
